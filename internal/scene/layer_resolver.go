@@ -61,8 +61,19 @@ func (s *SceneInstance) ResolveLayerID(playerID, query string) (string, error) {
 
 func matchExactLayer(query string, candidates []string) string {
 	query = strings.TrimSpace(query)
+	// Prefer the canonical ID when the caller already supplied it.
 	for _, candidate := range candidates {
-		if query == strings.TrimSpace(candidate) {
+		if strings.EqualFold(query, strings.TrimSpace(candidate)) {
+			return candidate
+		}
+	}
+	// Layer IDs use a storage prefix, while players naturally refer to the
+	// user-facing location name (for example "铁匠铺" vs "scene-铁匠铺").
+	for _, candidate := range candidates {
+		canonical := strings.TrimSpace(candidate)
+		displayName := strings.TrimSpace(strings.TrimPrefix(canonical, "scene-"))
+		displayName = strings.TrimSpace(strings.TrimPrefix(displayName, "scene_"))
+		if strings.EqualFold(query, displayName) {
 			return candidate
 		}
 	}
