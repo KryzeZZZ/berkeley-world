@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SAO Pixel World</title>
+  </head>
+  <body>
+    <main id="app">
+      <section class="game-shell" aria-label="SAO pixel world">
+        <div class="game-topbar">
+          <div class="brand-mark"><span class="brand-dot"></span>SAO / ALFHEIM SECTOR</div>
+          <div id="scene-name" class="scene-name">森林遗迹</div>
+          <div id="save-state" class="save-state">LOCAL SAVE</div>
+        </div>
+        <div id="game-root" class="game-root"></div>
+        <div class="hud hud-left">
+          <div class="avatar-frame"><span>AL</span></div>
+          <div><strong id="player-name">爱丽丝</strong><small id="player-position">X 0 / Y 0</small></div>
+        </div>
+        <div id="context-card" class="context-card" aria-live="polite">
+          <span class="context-kicker">NEARBY</span>
+          <strong id="context-title">探索森林遗迹</strong>
+          <p id="context-copy">移动至发光物件旁即可交互。</p>
+          <kbd id="context-key">WASD</kbd>
+        </div>
+        <aside class="event-feed" aria-label="世界事件">
+          <div class="feed-heading">WORLD LOG</div>
+          <div id="event-list" class="event-list"></div>
+        </aside>
+        <aside class="backpack" aria-label="背包">
+          <div class="feed-heading">BACKPACK</div>
+          <button id="staff-button" class="inventory-item" type="button" title="选择破界法杖，随后点击相邻树木格">
+            <img id="staff-icon" alt="破界法杖" />
+            <span><strong>破界法杖</strong><small id="staff-count">x1</small></span>
+          </button>
+        </aside>
+        <div class="controls">
+          <button id="interact-button" type="button" aria-label="交互">E</button>
+          <button id="reset-button" type="button" aria-label="重置本地世界">↺</button>
+        </div>
+      </section>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

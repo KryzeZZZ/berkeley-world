@@ -1,0 +1,26 @@
+{
+  "base_url": "https://msadream.cn/comfyui",
+  "checkpoint": "dDBattlemapsSDXL10_upscaleV10.safetensors",
+  "object_unet": "flux-2-klein-4b.safetensors",
+  "object_text_encoder": "qwen_3_4b.safetensors",
+  "object_vae": "flux2-vae.safetensors",
+  "object_steps": 4,
+  "object_width": 1024,
+  "object_height": 1024,
+  "controlnet": "controlnet-scribble-sdxl-1.0.safetensors",
+  "lora": "mapchipLora.safetensors",
+  "lora_strength": 0.85,
+  "object_lora": "strategai-topdown-medieval.safetensors",
+  "object_lora_strength": 0.85,
+  "object_lora_by_kind": {
+    "npc": "pixel-art-sprite-flux2.safetensors"
+  },
+  "object_lora_strength_by_kind": {
+    "npc": 0.65
+  },
+  "object_spritesheet": false,
+  "use_lora_for_map": false,
+  "use_lora_for_objects": true,
+  "timeout": "3m",
+  "insecure_skip_verify": true
+}

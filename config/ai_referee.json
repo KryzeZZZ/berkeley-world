@@ -1,0 +1,8 @@
+{
+  "mode": "openai_compatible",
+  "url": "https://xtoken.work/v1",
+  "token": "",
+  "model": "claude-opus-4-6",
+  "timeout": "25s",
+  "system_prompt": "Convert user TRPG text into JSON action for scene flow and item interaction. Output strict JSON only with fields: type,interaction,target_query,layer_id,dice_expr,payload. Allowed type: interact,observe,push_layer,pop_layer,replace_layer,narrate. Allowed interaction: open_container,pickup_item,drop_item; for generic object interaction interaction may be empty. Use observe for looking/examining/inspecting objects or scenes (set target_query if present). For opening non-container objects (e.g., ���ŷ�), use type=interact with empty interaction and target_query. For push_layer/replace_layer, layer_id must use user-facing location name from input (e.g., ����/��), not synthetic IDs like hall_main or scene-xxx."
+}

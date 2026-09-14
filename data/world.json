@@ -1,0 +1,158 @@
+{
+  "player_to_scene": {"p1": "scene-起始城镇"},
+  "scenes": [
+    {
+      "id": "scene-起始城镇",
+      "state": {
+        "id": "scene-起始城镇",
+        "version": 1,
+        "meta": {
+          "layer_bootstrapped": {
+            "scene-起始城镇": true,
+            "scene-酒馆": true,
+            "scene-铁匠铺": true,
+            "scene-城门": true,
+            "scene-野外": true,
+            "scene-地牢": true
+          },
+          "layer_descriptions": {
+            "scene-起始城镇": "一座由灰白石墙环绕的冒险者城镇。中央广场连接酒馆、铁匠铺与北侧城门，布告栏上张贴着新的讨伐委托。",
+            "scene-酒馆": "温暖喧闹的橡木酒馆，壁炉旁坐着旅人和佣兵。柜台后的老板掌握着附近地区的传闻。",
+            "scene-铁匠铺": "炉火通红的铁匠铺，墙上陈列着基础武器与护具。铁匠正在修补一把有缺口的长剑。",
+            "scene-城门": "起始城镇的北门，守卫检查来往旅人。门外道路通向野外，路标警告近期有魔物出没。",
+            "scene-野外": "城外的草原与疏林被一条旧石路贯穿。远处山脚下露出一座废弃地牢的入口。",
+            "scene-地牢": "潮湿阴冷的古代遗迹，石壁上刻着模糊符文。入口大厅深处传来哥布林的脚步声。"
+          },
+          "layer_parents": {
+            "scene-酒馆": "scene-起始城镇",
+            "scene-铁匠铺": "scene-起始城镇",
+            "scene-城门": "scene-起始城镇",
+            "scene-野外": "scene-城门",
+            "scene-地牢": "scene-野外"
+          },
+          "semantic_aliases": {"layer": {}, "object": {}}
+        }
+      },
+      "layer_stack": ["scene-起始城镇"],
+      "players": [
+        {
+          "id": "p1",
+          "name": "爱丽丝",
+          "scene_id": "scene-起始城镇",
+          "layer_stack": ["scene-起始城镇"],
+          "inventory_obj_ids": [],
+          "attributes": {"strength": 12, "dexterity": 11, "constitution": 10, "intelligence": 13, "wisdom": 12, "charisma": 9, "luck": 10},
+          "device_id": "",
+          "device_locked": false
+        }
+      ],
+      "objects": [
+        {
+          "id": "obj-城镇公告板",
+          "name": "冒险者公告板",
+          "tags": ["公告板", "委托", "任务"],
+          "state": {"layer": "scene-起始城镇", "description": "公告板上张贴着地牢侦察、采集草药和护送商队三份委托。"},
+          "version": 1
+        },
+        {
+          "id": "obj-中央喷泉",
+          "name": "中央喷泉",
+          "tags": ["喷泉", "地标"],
+          "state": {"layer": "scene-起始城镇", "description": "清澈泉水从剑士雕像脚下流入圆形水池，是城镇最醒目的地标。"},
+          "version": 1
+        },
+        {
+          "id": "obj-巡逻守卫",
+          "name": "巡逻守卫",
+          "tags": ["非玩家角色", "守卫", "友善"],
+          "state": {"layer": "scene-起始城镇", "description": "一名年轻守卫正在广场巡逻，可以询问城镇设施和城外情况。", "hp": 18},
+          "version": 1
+        },
+        {
+          "id": "obj-酒馆老板",
+          "name": "酒馆老板玛拉",
+          "tags": ["非玩家角色", "酒馆老板", "情报"],
+          "state": {"layer": "scene-酒馆", "description": "玛拉一边擦拭木杯，一边留意每位进门的冒险者。"},
+          "version": 1
+        },
+        {
+          "id": "obj-酒馆委托册",
+          "name": "旧委托册",
+          "tags": ["书册", "委托", "线索"],
+          "state": {"layer": "scene-酒馆", "description": "册子记录着近几个月失踪的商队，其中多次提到北方地牢。"},
+          "version": 1
+        },
+        {
+          "id": "obj-酒馆储物柜",
+          "name": "酒馆储物柜",
+          "tags": ["容器", "柜子"],
+          "state": {"layer": "scene-酒馆", "description": "柜门没有上锁，里面传来玻璃瓶轻碰的声音。", "locked": false, "opened": false},
+          "version": 1
+        },
+        {
+          "id": "obj-铁匠",
+          "name": "铁匠布兰",
+          "tags": ["非玩家角色", "铁匠", "商人"],
+          "state": {"layer": "scene-铁匠铺", "description": "布兰是个沉默寡言的矮人，擅长修理武器和鉴定金属。"},
+          "version": 1
+        },
+        {
+          "id": "obj-武器架",
+          "name": "基础武器架",
+          "tags": ["武器架", "装备", "商店"],
+          "state": {"layer": "scene-铁匠铺", "description": "架上摆着短剑、长矛和圆盾，每件都标有价格。"},
+          "version": 1
+        },
+        {
+          "id": "obj-守门卫兵",
+          "name": "守门卫兵",
+          "tags": ["非玩家角色", "卫兵", "情报"],
+          "state": {"layer": "scene-城门", "description": "卫兵提醒旅人，日落以后不要靠近北方遗迹。", "hp": 20},
+          "version": 1
+        },
+        {
+          "id": "obj-北门路标",
+          "name": "北门路标",
+          "tags": ["路标", "地标", "野外"],
+          "state": {"layer": "scene-城门", "description": "路标指向城镇广场、北方草原和废弃地牢。"},
+          "version": 1
+        },
+        {
+          "id": "obj-受伤冒险者",
+          "name": "受伤的冒险者",
+          "tags": ["非玩家角色", "冒险者", "线索"],
+          "state": {"layer": "scene-野外", "description": "一名冒险者靠在路旁喘息，护甲上留着哥布林武器造成的划痕。", "hp": 6},
+          "version": 1
+        },
+        {
+          "id": "obj-月光草",
+          "name": "月光草",
+          "tags": ["植物", "草药", "可拾取"],
+          "state": {"layer": "scene-野外", "description": "一株叶缘泛着银光的药草生长在旧石路旁。"},
+          "version": 1
+        },
+        {
+          "id": "obj-地牢石门",
+          "name": "符文石门",
+          "tags": ["石门", "机关", "符文"],
+          "state": {"layer": "scene-地牢", "description": "厚重石门上有三枚黯淡符文，门缝里透出微弱蓝光。", "locked": true, "opened": false},
+          "version": 1
+        },
+        {
+          "id": "obj-地牢宝箱",
+          "name": "生锈宝箱",
+          "tags": ["容器", "宝箱", "战利品"],
+          "state": {"layer": "scene-地牢", "description": "一只生锈铁箱藏在断裂石柱后面，锁扣看起来并不牢固。", "locked": true, "opened": false},
+          "version": 1
+        },
+        {
+          "id": "obj-哥布林哨兵",
+          "name": "哥布林哨兵",
+          "tags": ["非玩家角色", "敌对", "哥布林"],
+          "state": {"layer": "scene-地牢", "description": "哥布林哨兵握着缺口短刀，在入口大厅来回巡查。", "hp": 10},
+          "version": 1
+        }
+      ]
+    }
+  ]
+}

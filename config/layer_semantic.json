@@ -1,0 +1,8 @@
+﻿{
+  "url": "http://127.0.0.1:11434/v1/embeddings",
+  "model": "nomic-embed-text:latest",
+  "token": "",
+  "timeout": "30s",
+  "min_score": "0.40",
+  "min_gap": "0.04"
+}
