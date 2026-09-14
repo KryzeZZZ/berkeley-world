@@ -26,6 +26,8 @@ var (
 
 const actionOutcomeTimeout = 40 * time.Second
 
+const defaultSceneID = "scene-起始城镇"
+
 type NLActionRequest struct {
 	PlayerID string `json:"player_id"`
 	Input    string `json:"input"`
@@ -280,7 +282,7 @@ func (h *Handler) handleLogin(w http.ResponseWriter, r *http.Request) {
 
 	sceneID := strings.TrimSpace(req.SceneID)
 	if sceneID == "" {
-		sceneID = "scene-城镇"
+		sceneID = defaultSceneID
 	}
 	name := strings.TrimSpace(req.Name)
 	if name == "" {

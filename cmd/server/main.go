@@ -30,37 +30,37 @@ func main() {
 		log.Fatalf("load persistence failed: %v", err)
 	}
 	if !loaded {
-		sceneInstance := scene.NewSceneInstance("scene-城镇", 128, nil)
+		sceneInstance := scene.NewSceneInstance("scene-起始城镇", 128, nil)
 		sceneInstance.RegisterLayer("scene-地牢")
 		worldManager.AddScene(sceneInstance)
 
-		if err := worldManager.AddPlayer("scene-城镇", &model.PlayerState{
+		if err := worldManager.AddPlayer("scene-起始城镇", &model.PlayerState{
 			ID:   "p1",
 			Name: "爱丽丝",
 		}); err != nil {
 			log.Fatalf("add player failed: %v", err)
 		}
 
-		if err := worldManager.AddObject("scene-城镇", &model.GameObject{
+		if err := worldManager.AddObject("scene-起始城镇", &model.GameObject{
 			ID:   "obj-哥布林",
 			Name: "哥布林",
 			Tags: []string{"非玩家角色", "敌对", "哥布林"},
 			State: map[string]any{
 				"hp":    10,
-				"layer": "scene-城镇",
+				"layer": "scene-起始城镇",
 			},
 			Version: 1,
 		}); err != nil {
 			log.Fatalf("add object failed: %v", err)
 		}
-		if err := worldManager.AddObject("scene-城镇", &model.GameObject{
+		if err := worldManager.AddObject("scene-起始城镇", &model.GameObject{
 			ID:   "obj-木箱-1",
 			Name: "木箱",
 			Tags: []string{"容器", "木箱", "箱子"},
 			State: map[string]any{
 				"locked": false,
 				"opened": false,
-				"layer":  "scene-城镇",
+				"layer":  "scene-起始城镇",
 			},
 			Version: 1,
 		}); err != nil {

@@ -190,6 +190,8 @@ ATTRIBUTES = [
     "luck",
 ]
 
+DEFAULT_SCENE_ID = "scene-起始城镇"
+
 
 STREAM_REGISTRY: dict[str, dict[str, Any]] = {}
 
@@ -198,7 +200,9 @@ def ensure_state() -> None:
     st.session_state.setdefault("base_url", "http://127.0.0.1:8080")
     st.session_state.setdefault("player_id", "p1")
     st.session_state.setdefault("device_id", f"streamlit-{uuid.uuid4().hex[:8]}")
-    st.session_state.setdefault("scene_id", "scene-城镇")
+    st.session_state.setdefault("scene_id", DEFAULT_SCENE_ID)
+    if st.session_state.scene_id in {"scene-城镇", "scene-town"}:
+        st.session_state.scene_id = DEFAULT_SCENE_ID
     st.session_state.setdefault("player_name", "爱丽丝")
     st.session_state.setdefault("event_stream_key", uuid.uuid4().hex)
     st.session_state.setdefault("last_response", None)

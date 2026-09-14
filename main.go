@@ -30,22 +30,22 @@ func main() {
 		log.Fatalf("load persistence failed: %v", err)
 	}
 	if !loaded {
-		sceneInstance := scene.NewSceneInstance("scene-town", 128, nil)
-		sceneInstance.RegisterLayer("scene-dungeon")
+		sceneInstance := scene.NewSceneInstance("scene-起始城镇", 128, nil)
+		sceneInstance.RegisterLayer("scene-地牢")
 		worldManager.AddScene(sceneInstance)
 
-		if err := worldManager.AddPlayer("scene-town", &model.PlayerState{ID: "p1", Name: "Alice"}); err != nil {
+		if err := worldManager.AddPlayer("scene-起始城镇", &model.PlayerState{ID: "p1", Name: "爱丽丝"}); err != nil {
 			log.Fatalf("add player failed: %v", err)
 		}
-		if err := worldManager.AddObject("scene-town", &model.GameObject{
-			ID: "obj-goblin", Name: "Goblin", Tags: []string{"npc", "hostile", "goblin", "\u54e5\u5e03\u6797"},
-			State: map[string]any{"hp": 10, "layer": "scene-town"}, Version: 1,
+		if err := worldManager.AddObject("scene-起始城镇", &model.GameObject{
+			ID: "obj-哥布林", Name: "哥布林", Tags: []string{"非玩家角色", "敌对", "哥布林"},
+			State: map[string]any{"hp": 10, "layer": "scene-起始城镇"}, Version: 1,
 		}); err != nil {
 			log.Fatalf("add object failed: %v", err)
 		}
-		if err := worldManager.AddObject("scene-town", &model.GameObject{
-			ID: "obj-chest-1", Name: "Wooden Chest", Tags: []string{"container", "chest", "\u7bb1\u5b50", "\u5b9d\u7bb1"},
-			State: map[string]any{"locked": false, "opened": false, "layer": "scene-town"}, Version: 1,
+		if err := worldManager.AddObject("scene-起始城镇", &model.GameObject{
+			ID: "obj-木箱-1", Name: "木箱", Tags: []string{"容器", "木箱", "箱子"},
+			State: map[string]any{"locked": false, "opened": false, "layer": "scene-起始城镇"}, Version: 1,
 		}); err != nil {
 			log.Fatalf("add chest failed: %v", err)
 		}
